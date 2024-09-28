@@ -17,11 +17,19 @@ const ChefHeader = () => {
         <div className='flex items-center space-x-4 flex-grow justify-center '>
           <NavLink
             to='/'
-            // className={({ isActive }) =>
-            //   isActive ? 'text-yellow-500' : 'text-white'
-            // }
+            className={({ isActive }) =>
+              isActive ? 'text-yellow-500' : 'text-white'
+            }
           >
-            Home
+            HOME
+          </NavLink>
+          <NavLink
+            to='/task'
+            className={({ isActive }) =>
+              isActive ? 'text-yellow-500' : 'text-white'
+            }
+          >
+            TASK
           </NavLink>
         </div>
 

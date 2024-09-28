@@ -1,37 +1,25 @@
 // Home.jsx
-import React, { useEffect, useState } from 'react';
-import getProducts from '@/api/productApi';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
 
 const Home = () => {
-  const [products, setProducts] = useState(null);
-
-  useEffect(() => {
-    const fetchProducts = async () => {
-      const productsData = await getProducts();
-      setProducts(productsData);
-    };
-
-    fetchProducts();
-  }, []);
-
-  console.log(products);
-
   return (
-    <div className='min-h-screen h-min'>
-      <h1>Hello from Home.jsx</h1>
-      {/* Display products */}
-      {products ? (
-        <ul>
-          {products.products.map((product) => (
-            <li key={product.id}>
-              {product.title} - ${product.price}
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <p>Loading...</p>
-      )}
-      {/* Display products end */}
+    <div className='min-h-screen h-min  '>
+      <div className='flex flex-col items-center justify-center'>
+        <div>
+          <h1 className='scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl m-10 mt-20 pt-20'>
+            Hi!, Welcome to my Assignment Portal
+          </h1>
+        </div>
+        <div>
+          <Link to='/task'>
+            <Button variant='default' className='align-text-bottom'>
+              GO TO TASK
+            </Button>
+          </Link>
+        </div>
+      </div>
     </div>
   );
 };
