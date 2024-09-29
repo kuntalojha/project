@@ -11,7 +11,7 @@ export default defineConfig({
   },
   // add this for development parpuses
   server: {
-    port: 4000,
+    port: 2909,
     host: '0.0.0.0',
     open: true,
   },
